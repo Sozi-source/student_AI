@@ -257,7 +257,7 @@ export default function Home() {
           <div className={styles.welcomeWrap}>
             <div className={styles.welcomeCard}>
               <div className={styles.welcomeEmoji}>🎓</div>
-              <h1 className={styles.welcomeTitle}>Habari! I&apos;m your KNDI Assistant</h1>
+              <h1 className={styles.welcomeTitle}>Habari! I&apos;m your AI Assistant on KNDI Matters</h1>
               <p className={styles.welcomeSub}>
                 Use the <strong>Browse Services</strong> menu above to explore KNDI processes,
                 or type your question below. Available 24/7 for Imperial College students.
