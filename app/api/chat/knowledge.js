@@ -22,20 +22,33 @@ Who must apply?
 - Students admitted into KNDI-accredited institutions for nutrition and dietetics programmes.
 - Must apply within the FIRST SEMESTER/TERM of admission.
 
-Documents required:
-1. Passport-size photo (1x1 or 2x2, JPEG format, square crop)
-2. Copy of National ID or passport (PDF format)
-3. Copy of KCSE certificate (PDF format)
+Documents required (must be clearly scanned — soft copy):
+1. KCSE Certificate OR KCSE Results Slip (clearly scanned, PDF)
+2. National ID — BOTH front and back (clearly scanned, PDF)
+3. Admission Letter (clearly scanned, PDF)
+4. Birth Certificate (clearly scanned, PDF)
+5. Passport-size photo — clearly taken, soft copy (JPEG format, square crop)
+
+IMPORTANT — Payment:
+- ALL fees are paid DIRECTLY to KNDI via their portal/invoice
+- DO NOT deposit money into any school/institution account
+- Payment via invoice sent to student email from the KNDI OSP portal
+- Students who previously paid via institution must submit a cover letter from the institution head PLUS the original bank deposit slip
+- Penalty for late/stale bank slips (over 90 days old): Ksh 5,000
 
 Indexing fees:
 - Indexing fee: Ksh 3,000 (Legal Notice No. 216 of 2019)
 - Total payable upon application: Ksh 8,000 (Ksh 3,000 indexing + Ksh 5,000 first instalment for licensing exams)
-- Payment via invoice sent to student email from the KNDI OSP portal
-- Students who paid via institution must submit a cover letter from the institution head plus original bank deposit slip
-- Penalty for late/stale bank slips (over 90 days old): Ksh 5,000
 
 How to apply:
-- Online only: https://osp.kndi.institute/#/index-register
+Option A — Visit HOD Office:
+- Bring all required documents (clearly scanned soft copies) on a phone, flash disk, or email
+- The HOD will assist with uploading on the KNDI portal
+- HOD Office: Mr. Wilfred Osozi | WhatsApp: +254711390861 | Email: wilfred.osozi@icmhs.co.ke
+
+Option B — Apply on your own:
+- Go to any cyber cafe or use your phone/laptop
+- Apply online: https://osp.kndi.institute/#/index-register
 - Check application status: https://osp.kndi.institute/#/indexing/verify/status
 
 What you receive after successful indexing:
@@ -81,9 +94,20 @@ Who is eligible?
 - Any student admitted to certificate, diploma, or degree nutrition programme without meeting minimum core subject grades per Legal Notice 160.
 - Students admitted BEFORE 1st September 2021 can apply directly (no aptitude test needed).
 
-Fee: Ksh 10,000 per subject (via MPESA Paybill: 97577, account = INV invoice number)
-Resit fee: Ksh 6,000 per subject (only one resit allowed)
-If failed twice: the student CANNOT be registered with KNDI.
+Documents required for upgrading (must be clearly scanned — soft copy):
+1. KCSE Certificate OR KCSE Results Slip (clearly scanned, PDF)
+2. National ID — BOTH front and back (clearly scanned, PDF)
+3. Admission Letter (clearly scanned, PDF)
+4. Birth Certificate (clearly scanned, PDF)
+5. Passport-size photo — clearly taken, soft copy (JPEG, square crop)
+6. Signed Agreement Form (download, print, sign, scan and upload)
+   - Download Agreement Form: https://puexam.kndi.institute/agreement-form.pdf
+
+IMPORTANT — Payment:
+- ALL fees paid DIRECTLY to KNDI — DO NOT pay into any school account
+- Fee: Ksh 10,000 per subject (via MPESA Paybill: 97577, account = INV invoice number)
+- Resit fee: Ksh 6,000 per subject (only ONE resit allowed)
+- If failed twice: the student CANNOT be registered with KNDI
 
 2026 Upgrade Exam Calendar:
 - Phase 16 (CLOSED): Exams 10th–11th April 2026
@@ -120,6 +144,9 @@ Fees:
 - Degree: Ksh 10,000 total (Ksh 5,000 at indexing + Ksh 5,000 balance)
 - Resit fee (one resit only): Ksh 6,000
 
+IMPORTANT — Payment:
+- ALL fees paid DIRECTLY to KNDI — DO NOT pay into any school account
+
 2026 Exam Calendar:
 PHASE 1 (Open until 5th June 2026):
   - Degree exams: 18th–19th June 2026
@@ -155,7 +182,7 @@ Internship centres: http://www.kndi.institute/list/internship_list.php
 
 ## 7. SUBMITTING DOCUMENTS TO THE DEPARTMENT
 
-When students need to submit documents to the department (indexing docs, upgrading applications, exam forms, or any academic paperwork), send them to:
+Students who need assistance uploading indexing or upgrading documents can visit the HOD office or send documents digitally:
 
 Head of Department:
 - Name: Mr. Wilfred Osozi
@@ -167,6 +194,8 @@ What to include when submitting:
 - Registration number
 - Programme level (Certificate / Diploma / Degree)
 - Brief note on what the documents are for
+
+Note: You can also visit any cyber cafe to upload documents yourself on the KNDI portal.
 
 ---
 
@@ -188,19 +217,22 @@ TONE:
 
 ACCURACY:
 - Never guess or make up fees, dates, or procedures — use only facts above
+- Always remind students: ALL payments go DIRECTLY to KNDI — never to the school account
 - If a question is beyond this knowledge base, reply: "For this, contact KNDI directly: 📞 +254 0112 514 865 | 📧 info@kndi.institute"
 
 EXAMPLE of a good answer to "How do I apply for indexing?":
 
 **KNDI Indexing — How to Apply**
-• Apply online only: osp.kndi.institute/#/index-register
-• Must apply in your **first semester** of admission
-• Total fee: **Ksh 8,000** (Ksh 3,000 indexing + Ksh 5,000 exam instalment)
-• Pay via invoice sent to your email from the portal
+• Apply in your **first semester** of admission
+• Pay **Ksh 8,000** directly to KNDI (NOT the school) via invoice from the portal
+• Upload documents on the portal or visit the HOD office for help
 
-**Documents needed:**
+**Documents needed (clearly scanned soft copies):**
+• KCSE Certificate or Results Slip (PDF)
+• National ID — front & back (PDF)
+• Admission Letter (PDF)
+• Birth Certificate (PDF)
 • Passport photo (JPEG, square crop)
-• National ID or passport copy (PDF)
-• KCSE certificate copy (PDF)
 
-🔗 Apply: https://osp.kndi.institute/#/index-register`;
+🔗 Apply: https://osp.kndi.institute/#/index-register
+📍 Need help uploading? Visit HOD office or WhatsApp: +254711390861`;
