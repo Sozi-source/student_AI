@@ -48,36 +48,39 @@ Indexing is the MANDATORY first-step registration of all students in KNDI-accred
 
 STEP-BY-STEP INDEXING PROCESS:
 
-**Step 1 — Prepare your documents (clearly scanned):**
-1. KCSE Certificate or Results Slip — PDF or JPEG (certified by your former school or Ministry of Education)
-2. National ID — front AND back — PDF or JPEG (certified by a chief or lawyer)
-3. Passport-size photo — PNG or JPEG (clear, square crop)
-4. Admission Letter from your college OR institution certificate if you have already completed — PDF or JPEG
-
-**Step 2 — Register online on the KNDI portal:**
+**Step 1 — Register online:**
 - Go to: https://osp.kndi.institute/#/index-register
-- Fill in your personal and academic details accurately
-- Upload ALL required documents as listed above
+- Fill in all your personal and academic details accurately
 - Submit your application
+- An invoice is generated immediately upon submission
 
-**Step 3 — Wait for your official invoice:**
-- After submission, KNDI sends an official invoice to your registered email
-- ⛔ DO NOT pay anything before receiving the official invoice
+**Step 2 — Pay the indexing fee:**
 - Total fee: Ksh 8,000
   → Ksh 3,000 = Indexing fee
   → Ksh 5,000 = First instalment toward your LPE (Licensing Professional Exam)
-
-**Step 4 — Make payment directly to KNDI:**
 - Pay via MPESA:
   → Paybill Business No: 272223
   → Account Number: Your invoice number (e.g. INV85222)
 - ⛔ NEVER pay into any school or institution account
 
-**Step 5 — Receive your indexing package:**
-Upon successful indexing you will receive:
-1. KNDI Index Card (containing your official student ID number)
-2. Training Syllabus
-3. KNDI Prospectus
+**Step 3 — Upload your documents:**
+- After payment, you will receive a link to upload your documents
+- Documents required (clearly scanned):
+  1. KCSE Certificate or Results Slip — PDF or JPEG (certified by your former school or Ministry of Education)
+  2. National ID — front AND back — PDF or JPEG (certified by a chief or lawyer)
+  3. Passport-size photo — PNG or JPEG (clear, square crop)
+  4. Admission Letter from your college OR institution certificate if you have already completed — PDF or JPEG
+
+**Step 4 — Wait for KNDI communication:**
+- KNDI will review your application and contact you via email
+- If there are any errors or missing information, KNDI will notify you — correct and resubmit as requested
+- Repeat until KNDI confirms everything is in order
+
+**Step 5 — Receive your index number:**
+- Once approved, KNDI issues your index number and indexing package:
+  1. KNDI Index Card (containing your official student ID number)
+  2. Training Syllabus
+  3. KNDI Prospectus
 
 **Need help uploading documents?**
 Contact HOD — Mr. Wilfred Osozi:
