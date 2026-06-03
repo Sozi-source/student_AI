@@ -285,9 +285,13 @@ export default function Home() {
         {messages.map((m, i) => (
           <div key={i} className={m.role === 'user' ? styles.userRow : styles.botRow}>
             {m.role === 'assistant' && <div className={styles.botAvatar}>AI</div>}
-            <div className={m.role === 'user' ? styles.userBubble : styles.botBubble}>
-              <MessageText content={m.content} />
-            </div>
+            {m.role === 'user' ? (
+              <div className={styles.userBubble}>{m.content}</div>
+            ) : (
+              <div className={styles.botBubble}>
+                <MessageText content={m.content} />
+              </div>
+            )}
           </div>
         ))}
 
