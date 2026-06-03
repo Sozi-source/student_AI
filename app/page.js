@@ -89,62 +89,124 @@ const QUICK = [
   { label: '📤 Submit docs', q: 'How do I submit documents to the HOD?' },
 ];
 
-// Renders markdown-like text: **bold**, bullet lines, links
-function MessageText({ content }) {
-  const text = typeof content === 'string' ? content : String(content ?? '');
-
-  // Split into lines
-  const lines = text.split('\n');
-
-  return (
-    <div className={styles.msgBody}>
-      {lines.map((line, i) => {
-        const trimmed = line.trim();
-        if (!trimmed) return <div key={i} className={styles.msgSpacer} />;
-
-        // Bullet line: starts with * or - or •
-        const isBullet = /^[\*\-•]\s+/.test(trimmed);
-        const lineText = isBullet ? trimmed.replace(/^[\*\-•]\s+/, '') : trimmed;
-
-        // Heading: starts with ** and ends with **
-        const isHeading = /^\*\*[^*]+\*\*$/.test(trimmed);
-
-        if (isHeading) {
-          return (
-            <div key={i} className={styles.msgHeading}>
-              {trimmed.replace(/\*\*/g, '')}
-            </div>
-          );
-        }
-
-        return (
-          <div key={i} className={isBullet ? styles.msgBullet : styles.msgLine}>
-            {isBullet && <span className={styles.bulletDot} />}
-            <span>{renderInline(lineText)}</span>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// Renders **bold** and clickable URLs inline
+// ── Inline renderer: **bold** and URLs ──
 function renderInline(text) {
-  // Split on **bold** and URLs
   const parts = text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s]+)/g);
   return parts.map((part, i) => {
-    if (/^\*\*[^*]+\*\*$/.test(part)) {
-      return <strong key={i}>{part.replace(/\*\*/g, '')}</strong>;
-    }
+    if (/^\*\*[^*]+\*\*$/.test(part))
+      return <strong key={i} className={styles.inlineBold}>{part.replace(/\*\*/g, '')}</strong>;
     if (/^https?:\/\//.test(part)) {
+      const display = part.replace(/^https?:\/\//, '').replace(/\/$/, '');
       return (
         <a key={i} href={part} target="_blank" rel="noopener" className={styles.msgLink}>
-          {part}
+          🔗 {display}
         </a>
       );
     }
     return part;
   });
+}
+
+// ── Premium card message renderer ──
+function MessageText({ content }) {
+  const text = typeof content === 'string' ? content : String(content ?? '');
+  const lines = text.split('\n');
+
+  // Group lines into sections: each **Heading** starts a new card section
+  const sections = [];
+  let current = { heading: null, rows: [] };
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      if (current.rows.length > 0) current.rows.push({ type: 'spacer' });
+      return;
+    }
+
+    const isHeading = /^\*\*[^*]+\*\*$/.test(trimmed);
+    if (isHeading) {
+      if (current.heading !== null || current.rows.length > 0) {
+        sections.push(current);
+      }
+      current = { heading: trimmed.replace(/\*\*/g, ''), rows: [] };
+      return;
+    }
+
+    const stepMatch = trimmed.match(/^(\d+)\.\s+(.+)/);
+    const isBullet = /^[\*\-•]\s+/.test(trimmed);
+    const isSubHead = !isBullet && !stepMatch && trimmed.endsWith(':') && trimmed.length < 70;
+
+    if (stepMatch) {
+      current.rows.push({ type: 'step', num: stepMatch[1], text: stepMatch[2] });
+    } else if (isBullet) {
+      current.rows.push({ type: 'bullet', text: trimmed.replace(/^[\*\-•]\s+/, '') });
+    } else if (isSubHead) {
+      current.rows.push({ type: 'subhead', text: trimmed });
+    } else {
+      current.rows.push({ type: 'line', text: trimmed });
+    }
+  });
+  sections.push(current);
+
+  // Remove trailing spacers
+  sections.forEach(s => {
+    while (s.rows.length && s.rows[s.rows.length - 1].type === 'spacer') s.rows.pop();
+  });
+
+  const BULLET_ICONS = ['◆', '✦', '▸', '◈', '✧', '⬡'];
+  let bulletIdx = 0;
+
+  const renderRow = (row, i) => {
+    if (row.type === 'spacer') return <div key={i} className={styles.rowSpacer} />;
+    if (row.type === 'subhead') return (
+      <div key={i} className={styles.subHead}>{row.text}</div>
+    );
+    if (row.type === 'step') return (
+      <div key={i} className={styles.stepRow}>
+        <span className={styles.stepBadge}>{row.num}</span>
+        <span className={styles.stepText}>{renderInline(row.text)}</span>
+      </div>
+    );
+    if (row.type === 'bullet') {
+      const icon = BULLET_ICONS[bulletIdx++ % BULLET_ICONS.length];
+      return (
+        <div key={i} className={styles.bulletRow}>
+          <span className={styles.bulletIcon}>{icon}</span>
+          <span className={styles.bulletText}>{renderInline(row.text)}</span>
+        </div>
+      );
+    }
+    return <p key={i} className={styles.bodyLine}>{renderInline(row.text)}</p>;
+  };
+
+  // Single section with no heading → plain bubble
+  if (sections.length === 1 && !sections[0].heading) {
+    return (
+      <div className={styles.msgPlain}>
+        {sections[0].rows.map(renderRow)}
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.msgCard}>
+      {sections.map((sec, si) => (
+        <div key={si} className={styles.cardSection}>
+          {sec.heading && (
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionDot} />
+              <span className={styles.sectionTitle}>{sec.heading}</span>
+            </div>
+          )}
+          {sec.rows.length > 0 && (
+            <div className={styles.sectionBody}>
+              {sec.rows.map(renderRow)}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default function Home() {
@@ -259,11 +321,7 @@ export default function Home() {
                   {openCat === si && (
                     <div className={styles.menuItems}>
                       {s.items.map((item, ii) => (
-                        <button
-                          key={ii}
-                          className={styles.menuItem}
-                          onClick={() => send(item)}
-                        >
+                        <button key={ii} className={styles.menuItem} onClick={() => send(item)}>
                           {item}
                         </button>
                       ))}
@@ -277,11 +335,7 @@ export default function Home() {
       )}
 
       <footer className={styles.footer}>
-        <button
-          className={styles.menuBtn}
-          onClick={() => setShowMenu(!showMenu)}
-          aria-label="Browse services"
-        >
+        <button className={styles.menuBtn} onClick={() => setShowMenu(!showMenu)} aria-label="Browse services">
           ☰
         </button>
         <input
