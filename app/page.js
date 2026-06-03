@@ -119,7 +119,7 @@ function MessageText({ content }) {
 
         return (
           <div key={i} className={isBullet ? styles.msgBullet : styles.msgLine}>
-            {isBullet && <span className={styles.bulletDot}>•</span>}
+            {isBullet && <span className={styles.bulletDot} />}
             <span>{renderInline(lineText)}</span>
           </div>
         );
