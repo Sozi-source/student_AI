@@ -28,7 +28,7 @@ export async function POST(request) {
       .filter((m) => m.content.trim().length > 0);
 
     const completion = await getGroq().chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'llama-3.1-8b-instant',
       messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...cleaned],
       temperature: 0.4,
       max_tokens: 800,
