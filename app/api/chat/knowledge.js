@@ -37,7 +37,18 @@ KNDI CONTACTS:
   • English or Kiswahili
 - Plus C (plain) in ANY ONE of: Physics, Mathematics, Geography
 
-⚠️ IMPORTANT: A student who meets the mean grade BUT falls short in any core subject MUST apply for the Professional Upgrading Examination in the subject(s) they did not meet.
+⚠️ CRITICAL ELIGIBILITY RULE — READ CAREFULLY:
+
+There are TWO separate eligibility conditions — BOTH must be met:
+
+CONDITION 1 — KCSE Mean Grade:
+- If a student did NOT meet the minimum KCSE mean grade for their programme level, they CANNOT be admitted or continue with the programme. There is no exam or workaround for this. They must see the HOD immediately for guidance.
+
+CONDITION 2 — Core Subject Grades:
+- If a student MET the required mean grade BUT did not attain the minimum grade in one or more core subjects, ONLY THEN are they eligible for the Professional Upgrading Examination in those subjects.
+- Upgrading Exams are ONLY for students who already met the mean grade. They do NOT help students who failed the mean grade.
+
+NEVER suggest upgrading exams to a student who did not meet the mean grade. Always direct them to the HOD immediately.
 
 ---
 
@@ -96,12 +107,13 @@ Check indexing application status: https://osp.kndi.institute/#/indexing/verify/
 ## 2. PROFESSIONAL UPGRADING EXAMINATIONS
 
 What is it?
-Exams for students who have NOT met the minimum core subject grades as per Legal Notice 160. You sit only the subjects you did not meet. Must pass before proceeding to LPE.
+Exams for students who MET the required KCSE mean grade for their programme level BUT did NOT meet the minimum grade in one or more core subjects as per Legal Notice 160. You sit only the subjects you did not meet. Must pass before proceeding to LPE.
 
 ✅ Who qualifies:
-- Any student who met the required KCSE mean grade for their level but did not attain the minimum grade in one or more core subjects
+- ONLY students who met the required KCSE mean grade for their level but did not attain the minimum grade in one or more core subjects
+- Students who did NOT meet the mean grade do NOT qualify — they must see the HOD immediately
 
-Subjects (sit only what you failed):
+Subjects (sit only what you missed):
 1. Biology → examined as "Human Biology"
 2. Chemistry → examined as "Basic Chemistry"
 3. Mathematics → examined as "Basic Mathematics"
@@ -300,6 +312,7 @@ ACCURACY:
 - Never answer questions about topics not covered in this knowledge base — not even partially
 - Always remind: ALL payments go DIRECTLY to KNDI — never to school/institution accounts
 - Always remind: Register online FIRST → wait for official invoice → THEN pay
+- ELIGIBILITY: If a student did not meet the minimum KCSE mean grade, do NOT suggest upgrading exams. Tell them clearly they must see the HOD immediately — there is no alternative path described in this knowledge base
 - If a question is beyond this knowledge base, respond ONLY with:
   "I don't have information on that. Please contact the HOD directly for guidance:
   📲 WhatsApp: +254 711 390 861

@@ -14,13 +14,12 @@ const SERVICES = [
     ],
   },
   {
-    category: '📝 Aptitude Exam',
+    category: '📚 Entry Requirements',
     items: [
-      'What is the aptitude exam?',
-      'Aptitude exam 2026 dates',
-      'How to register for aptitude exam',
-      'Aptitude exam fees',
-      'Aptitude exam results',
+      'Certificate entry requirements',
+      'Diploma entry requirements',
+      'Degree entry requirements',
+      'Do I qualify for the programme?',
     ],
   },
   {
@@ -31,7 +30,6 @@ const SERVICES = [
       'How to register for upgrading',
       'Upgrading exam fees',
       'Upgrading exam eligibility',
-      'Upgrading exam centers',
       'Upgrading exam results',
       'Phase 17 upgrading details',
     ],
@@ -44,7 +42,6 @@ const SERVICES = [
       'How to register for LPE',
       'LPE fees',
       'LPE eligibility requirements',
-      'LPE exam centers',
       'LPE results',
     ],
   },
@@ -61,7 +58,7 @@ const SERVICES = [
     items: [
       'Internship requirements',
       'How to apply for internship',
-      'Internship allowance',
+      'Internship centres list',
     ],
   },
   {
