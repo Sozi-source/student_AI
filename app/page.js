@@ -11,8 +11,6 @@ const SERVICES = [
       'Documents required for indexing',
       'Indexing fees',
       'Check application status',
-      'Paid via institution',
-      'Late payment penalty',
     ],
   },
   {
@@ -91,6 +89,64 @@ const QUICK = [
   { label: '📤 Submit docs', q: 'How do I submit documents to the HOD?' },
 ];
 
+// Renders markdown-like text: **bold**, bullet lines, links
+function MessageText({ content }) {
+  const text = typeof content === 'string' ? content : String(content ?? '');
+
+  // Split into lines
+  const lines = text.split('\n');
+
+  return (
+    <div className={styles.msgBody}>
+      {lines.map((line, i) => {
+        const trimmed = line.trim();
+        if (!trimmed) return <div key={i} className={styles.msgSpacer} />;
+
+        // Bullet line: starts with * or - or •
+        const isBullet = /^[\*\-•]\s+/.test(trimmed);
+        const lineText = isBullet ? trimmed.replace(/^[\*\-•]\s+/, '') : trimmed;
+
+        // Heading: starts with ** and ends with **
+        const isHeading = /^\*\*[^*]+\*\*$/.test(trimmed);
+
+        if (isHeading) {
+          return (
+            <div key={i} className={styles.msgHeading}>
+              {trimmed.replace(/\*\*/g, '')}
+            </div>
+          );
+        }
+
+        return (
+          <div key={i} className={isBullet ? styles.msgBullet : styles.msgLine}>
+            {isBullet && <span className={styles.bulletDot}>•</span>}
+            <span>{renderInline(lineText)}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Renders **bold** and clickable URLs inline
+function renderInline(text) {
+  // Split on **bold** and URLs
+  const parts = text.split(/(\*\*[^*]+\*\*|https?:\/\/[^\s]+)/g);
+  return parts.map((part, i) => {
+    if (/^\*\*[^*]+\*\*$/.test(part)) {
+      return <strong key={i}>{part.replace(/\*\*/g, '')}</strong>;
+    }
+    if (/^https?:\/\//.test(part)) {
+      return (
+        <a key={i} href={part} target="_blank" rel="noopener" className={styles.msgLink}>
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function Home() {
   const [messages, setMessages] = useState([
     {
@@ -110,22 +166,32 @@ export default function Home() {
   }, [messages, loading]);
 
   const send = async (text) => {
-    const q = text || input.trim();
+    const q = typeof text === 'string' && text.trim() ? text.trim() : input.trim();
     if (!q || loading) return;
     setInput('');
     setShowMenu(false);
-    setMessages((prev) => [...prev, { role: 'user', content: q }]);
+
+    const history = [...messages, { role: 'user', content: q }];
+    setMessages(history);
     setLoading(true);
+
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...messages, { role: 'user', content: q }] }),
+        body: JSON.stringify({ messages: history }),
       });
       const data = await res.json();
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.message }]);
+      const reply =
+        data && typeof data.message === 'string' && data.message
+          ? data.message
+          : 'Sorry, something went wrong. Please try again.';
+      setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch {
-      setMessages((prev) => [...prev, { role: 'assistant', content: 'Sorry, something went wrong. Please try again.' }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: 'assistant', content: 'Connection error. Please check your internet and try again.' },
+      ]);
     }
     setLoading(false);
   };
@@ -133,7 +199,6 @@ export default function Home() {
   return (
     <div className={styles.shell}>
 
-      {/* Header */}
       <header className={styles.header}>
         <div className={styles.headerAvatar}>HND</div>
         <div className={styles.headerInfo}>
@@ -143,10 +208,7 @@ export default function Home() {
         <span className={styles.onlineDot} />
       </header>
 
-      {/* Chat area */}
       <main className={styles.chat}>
-
-        {/* Quick action cards */}
         {messages.length <= 1 && (
           <div className={styles.quickGrid}>
             {QUICK.map((q) => (
@@ -158,14 +220,11 @@ export default function Home() {
           </div>
         )}
 
-        {/* Messages */}
         {messages.map((m, i) => (
           <div key={i} className={m.role === 'user' ? styles.userRow : styles.botRow}>
             {m.role === 'assistant' && <div className={styles.botAvatar}>AI</div>}
             <div className={m.role === 'user' ? styles.userBubble : styles.botBubble}>
-              {m.content.split('\n').map((line, j) => (
-                <span key={j}>{line}{j < m.content.split('\n').length - 1 && <br />}</span>
-              ))}
+              <MessageText content={m.content} />
             </div>
           </div>
         ))}
@@ -182,7 +241,6 @@ export default function Home() {
         <div ref={bottomRef} />
       </main>
 
-      {/* Services slide-up panel */}
       {showMenu && (
         <div className={styles.menuOverlay} onClick={() => setShowMenu(false)}>
           <div className={styles.menuPanel} onClick={(e) => e.stopPropagation()}>
@@ -218,7 +276,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Footer input */}
       <footer className={styles.footer}>
         <button
           className={styles.menuBtn}
